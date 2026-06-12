@@ -2,11 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  color: #333;s
+  font-family: inherit;
 }
 
 /* NAV */
@@ -15,7 +11,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid white;
 }
 
 header p {
@@ -30,7 +26,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: black;
 }
 
 nav a:hover {
@@ -40,16 +36,13 @@ nav a:hover {
 /* HOME PAGE */
 #content {
   max-width: 800px;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 0 2rem;
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
 }
 
 #content img {
-  width: 200px;
-  border-radius: 50%;
+  width: 400px;
+  margin-bottom: 1rem;
 }
 
 #content h1 {
@@ -60,14 +53,6 @@ nav a:hover {
 #content p {
   line-height: 1.6;
   margin-bottom: 1rem;
-}
-
-blockquote {
-  border-left: 3px solid #ccc;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  color: #666;
-  font-style: italic;
 }
 
 /* ABOUT PAGE */
@@ -88,7 +73,7 @@ blockquote {
 }
 
 .about-section img {
-  width: 100%;
+  width: 400px;
   margin: 1rem 0;
 }
 
@@ -101,8 +86,106 @@ blockquote {
 footer {
   text-align: center;
   padding: 2rem;
-  color: #999;
+  color: gray;
   font-size: 0.9rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid white;
   margin-top: 4rem;
+}
+
+/* CONTACT PAGE */
+.contact-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.contact-layout img {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.contact-section input,
+.contact-section textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-section textarea {
+  height: 100px;
+}
+
+.contact-section form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* PORTFOLIO PAGE */
+.portfolio-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.portfolio-section h2 {
+  background: blue;
+  color: white;
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-section .container {
+  padding: 0.25rem;
+}
+
+.portfolio-section img {
+  max-width: 100%;
+}
+
+.portfolio-section p {
+  margin: 0.25rem 0;
+  line-height: 1.6;
+}
+.page-header p {
+  font-size: 1.2rem;
+  color:black;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* MOBILE FIRST - base styles, no media query needed */
+.contact-layout {
+  display: flex;
+  flex-direction: column; /* stacks on mobile */
+  gap: 1rem;
+}
+
+.contact-layout img {
+  width: 100%; /* full width on mobile */
+}
+
+/* DESKTOP - kicks in when screen is wide enough */
+@media (min-width: 600px) {
+  .contact-layout {
+    flex-direction: row; /* side by side on desktop */
+  }
+
+  .contact-layout img {
+    width: 300px;
+    flex-shrink: 0;
+  }
 }
